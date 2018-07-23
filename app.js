@@ -1,10 +1,9 @@
-const http = require('http');
+var http = require('http');
 var fs = require('fs');
 
 var port = process.env.PORT || '3000';
-console.log(http);
 
-const server = http.createServer((req, res) => {
+var server = http.createServer((req, res) => {
     fs.readFile("index.html", function (err, data) {
         if (err) {
             console.log("error obtaining data");
