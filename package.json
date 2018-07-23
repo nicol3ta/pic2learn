@@ -1,0 +1,19 @@
+{
+  "name": "pic2learn",
+  "version": "1.0.0",
+  "description": "A Bing Visual Search Skill that allows users to take a picture and get an instant translation in a foreign language",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicol3ta/pic2learn.git"
+  },
+  "author": "Nicoleta Mihali, Maria Castaneda Laris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicol3ta/pic2learn/issues"
+  },
+  "homepage": "https://github.com/nicol3ta/pic2learn#readme"
+}
