@@ -1,40 +1,46 @@
 
 .title {
 	font-family: 'Helvetica Neue',sans-serif;
+	display: flex;
 	font-size: 18px;
 }
+
+.logo {
+	height: 50px;
+	width: 50px;
+}
+
+.title_text {
+	line-height: 50px;
+	color: white;
+}
+
 .flex {
 	display: flex;
 }
 
-img {
+.render_image {
 	width: 130px;
 	height: 130px;
-	vertical-align: super;
 }
 
-body
-{background-color: #2E404E ;}
+body{
+	background-color: #2E404E;
+}
 
 .flashcard {
 	border: 1px solid lightgrey;
-	width: 30%;
+	width: 80%;
+	max-width: 300px;
     border-radius: 3%;
     height: 50%;
-    flex-direction: inherit;
-	align-items: center;
-	align-content: center;
-	padding: 30px;
-	margin-left: auto;
-	margin-right: auto;
-	flex-direction: column;
-	background-color: white ;
+	padding: 10px;
+	background-color: white;
 }
 
-span{display: inline-block;
-	align-content: center}
-.firstrow {vertical-align: super;}
-.secondrow {vertical-align: sub;}
+.other_translations {
+	
+}
 
 h1 { color: white; font-family: 'Trocchi', sans-serif; font-size: 25px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
 }
