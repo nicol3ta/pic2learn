@@ -2,11 +2,10 @@
 .flex.flashcard 
 	//- 
 		TODO: the image will go here
-	img.img(src='https://placeimg.com/640/480/animals')
-
-	//div.firstrow.p current language is !{JSON.stringify(locals.language)} 
+	img.render_image(src='https://placeimg.com/640/480/animals')
 	div.secondrow 
 		each val,index in locals.translations
-			.flex.p !{JSON.stringify(locals.translations[index].to)} :
-			.flex.translationtitle !{JSON.stringify(locals.translations[index].text)}
-script(type='text/javascript' src='scripts/shared.js')
+			.flex
+				.flex.p !{locals.translations[index].to}:
+				.flex.translationtitle !{locals.translations[index].text}
+script(type="text/javascript" src="scripts/shared.js")
