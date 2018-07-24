@@ -1,0 +1,18 @@
+﻿doctype html
+html(lang='en')
+	head
+		title Pic2Learn - your everyday translator
+		style
+			include ../styles/main.css
+	body
+		.flex !{locals.title}
+		div current language is !{JSON.stringify(locals.language)}
+		
+		.flex 
+			//- 
+				TODO: the image will go here
+			img(src='https://placeimg.com/640/480/animals')
+
+			each val,index in locals.translations
+				.flex Language: !{JSON.stringify(locals.translations[index].to)}
+				.flex !{JSON.stringify(locals.translations[index].text)}

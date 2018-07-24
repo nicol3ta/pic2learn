@@ -1,0 +1,13 @@
+.title {
+	font-family: "Arial";
+	font-size: 18px;
+	font-weight: bold;
+}
+.flex {
+	display: flex;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}

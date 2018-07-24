@@ -1,15 +1,34 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express'),
+	http = require('http'),
+	fs = require('fs'),
+	path = require('path');
 
 var port = process.env.PORT || '3000';
+var app = express();
 
-var server = http.createServer((req, res) => {
-    fs.readFile("index.html", function (err, data) {
-        if (err) {
-            console.log("error obtaining data");
-        }
-		res.writeHead(200, { 'Content-Type': 'text/html' });
-		res.write(data);
-        res.end();
-    });
-}).listen(port);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
+app.get('/', function(req, res) {
+	var urlParam = req.query.myParam;
+	try {
+		var content = JSON.stringify ([{'Text' : urlParam}]);
+		var languages = '&to=es&to=de';
+		var translateResponse = require('./scripts/translate.js')(content, languages);
+		var jsonObj = JSON.parse(translateResponse);
+		
+		res.render('index', {
+			title: 'Pic2Learn - your everyday translator',
+			language: jsonObj[0].detectedLanguage.language,
+			translations: jsonObj[0].translations
+		});
+
+	} catch (err) {
+		res.render('error', {
+			locals: {
+				title: 'Example nodejs'
+			}
+		});
+	}
+});
+
+app.listen(port);
