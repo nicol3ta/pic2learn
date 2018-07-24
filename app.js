@@ -10,7 +10,7 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.get('/', function(req, res) {
-	var urlParam = req.query.myParam;
+	var urlParam = req.query.p;
 	try {
 		var content = JSON.stringify ([{'Text' : urlParam}]);
 		var languages = '&to=es&to=de';
