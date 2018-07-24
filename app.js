@@ -1,7 +1,8 @@
 var express = require('express'),
 	http = require('http'),
 	fs = require('fs'),
-	path = require('path');
+	path = require('path'),
+	trans = require('./scripts/translate.js');
 
 var port = process.env.PORT || '3000';
 var app = express();
@@ -13,7 +14,7 @@ app.get('/', function(req, res) {
 	try {
 		var content = JSON.stringify ([{'Text' : urlParam}]);
 		var languages = '&to=es&to=de';
-		var translateResponse = require('./scripts/translate.js')(content, languages);
+		var translateResponse = trans.translate(content, languages);
 		var jsonObj = JSON.parse(translateResponse);
 		
 		res.render('index', {

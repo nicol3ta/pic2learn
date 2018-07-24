@@ -36,7 +36,8 @@ var get_guid = function () {
   });
 }
 
-var translate = function (content, params) {
+module.exports = {
+    translate : function (content, params) {
     var request_params = {
         method : 'POST',
         hostname : host,
@@ -53,10 +54,5 @@ var translate = function (content, params) {
     req.end ();
 
     return translationResult;
+}    
 }
-
-module.exports = translate;
-
-//let content = JSON.stringify ([{'Text' : text}]);
-
-//Translate (content);

@@ -1,3 +1,7 @@
+body {
+	display: flex;
+}
+
 .title {
 	font-family: "Arial";
 	font-size: 18px;
@@ -8,6 +12,17 @@
 }
 
 img {
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 130px;
+}
+
+.flashcard {
+	border: 1px solid lightgrey;
+	width: 50%;
+    border-radius: 3%;
+    height: 250px;
+    flex-direction: inherit;
+    align-items: center;
+    box-shadow: 0 20px 10px lightgrey;
+    padding: 30px;
 }
