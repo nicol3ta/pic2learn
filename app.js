@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 		var jsonObj = JSON.parse(translateResponse);
 		
 		res.render('index', {
-			title: 'Pic2Learn - your everyday translator',
+			title: 'Pic2Learn - Your Everyday Translator',
 			language: jsonObj[0].detectedLanguage.language,
 			translations: jsonObj[0].translations
 		});

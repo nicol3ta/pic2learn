@@ -1,11 +1,7 @@
-body {
-	display: flex;
-}
 
 .title {
-	font-family: "Arial";
+	font-family: 'Helvetica Neue',sans-serif;
 	font-size: 18px;
-	font-weight: bold;
 }
 .flex {
 	display: flex;
@@ -14,15 +10,39 @@ body {
 img {
 	width: 130px;
 	height: 130px;
+	vertical-align: super;
 }
+
+body
+{background-color: #2E404E ;}
 
 .flashcard {
 	border: 1px solid lightgrey;
-	width: 50%;
+	width: 30%;
     border-radius: 3%;
-    height: 250px;
+    height: 50%;
     flex-direction: inherit;
-    align-items: center;
-    box-shadow: 0 20px 10px lightgrey;
-    padding: 30px;
+	align-items: center;
+	align-content: center;
+	padding: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	flex-direction: column;
+	background-color: white ;
 }
+
+span{display: inline-block;
+	align-content: center}
+.firstrow {vertical-align: super;}
+.secondrow {vertical-align: sub;}
+
+h1 { color: white; font-family: 'Trocchi', sans-serif; font-size: 25px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
+}
+
+.translationtitle { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
+}
+
+.h2 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+	
+.p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: text-top; text-justify: inter-word; 
+}	
