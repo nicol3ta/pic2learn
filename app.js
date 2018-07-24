@@ -14,14 +14,8 @@ app.get('/', function(req, res) {
 	try {
 		var content = JSON.stringify ([{'Text' : urlParam}]);
 		var languages = '&to=es&to=de';
-		var translateResponse = trans.translate(content, languages);
-		var jsonObj = JSON.parse(translateResponse);
+		var translateResponse = trans.translate(content, languages, doStuff, res);
 		
-		res.render('index', {
-			title: 'Pic2Learn - Your Everyday Translator',
-			language: jsonObj[0].detectedLanguage.language,
-			translations: jsonObj[0].translations
-		});
 
 	} catch (err) {
 		res.render('welcome', {
@@ -31,5 +25,15 @@ app.get('/', function(req, res) {
 		});
 	}
 });
+
+function doStuff(translateResponse, res) {
+	var jsonObj = JSON.parse(translateResponse);
+		
+		res.render('index', {
+			title: 'Pic2Learn - Your Everyday Translator',
+			language: jsonObj[0].detectedLanguage.language,
+			translations: jsonObj[0].translations
+		});
+}
 
 app.listen(port);

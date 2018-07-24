@@ -1,21 +1,12 @@
-﻿doctype html
-html(lang='en')
-	head
-		title Pic2Learn - Your Everyday Translator
-		style
-			include ../styles/main.css
-	body
-		//colors used: 2E404E 5FC4BD F2F2F2
+﻿include header.pug
+.flex.flashcard 
+	//- 
+		TODO: the image will go here
+	img.img(src='https://placeimg.com/640/480/animals')
 
-		h1 !{locals.title}
-		
-		.flex.flashcard 
-			//- 
-				TODO: the image will go here
-			img(src='https://placeimg.com/640/480/animals')
-
-			//div.firstrow.p current language is !{JSON.stringify(locals.language)} 
-			div.secondrow 
-				each val,index in locals.translations
-					.flex.p !{JSON.stringify(locals.translations[index].to)} :
-					.flex.translationtitle !{JSON.stringify(locals.translations[index].text)}
+	//div.firstrow.p current language is !{JSON.stringify(locals.language)} 
+	div.secondrow 
+		each val,index in locals.translations
+			.flex.p !{JSON.stringify(locals.translations[index].to)} :
+			.flex.translationtitle !{JSON.stringify(locals.translations[index].text)}
+script(type='text/javascript' src='scripts/shared.js')
