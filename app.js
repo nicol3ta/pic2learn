@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
 		});
 
 	} catch (err) {
-		res.render('error', {
+		res.render('welcome', {
 			locals: {
 				title: 'Example nodejs'
 			}
