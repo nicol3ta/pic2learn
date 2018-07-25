@@ -14,15 +14,16 @@ var path = '/translate?api-version=3.0';
 
 // Translate to German and Italian.
 var translationResult;
-
-var response_handler = function (response) {
+var imageUrl = '';
+var response_handler = function (response, doStuff, res) {
     let body = '';
     response.on ('data', function (d) {
-        body += d;
+        body += d;    
+
     });
     response.on ('end', function () {
         translationResult = JSON.stringify(JSON.parse(body), null, 4);
-        console.log(translationResult);
+        doStuff(translationResult, res);
     });
     response.on ('error', function (e) {
         console.log ('Error: ' + e.message);
@@ -37,7 +38,7 @@ var get_guid = function () {
 }
 
 module.exports = {
-    translate : function (content, params) {
+    translate : function (content, params, doStuff, res) {
     var request_params = {
         method : 'POST',
         hostname : host,
@@ -48,8 +49,7 @@ module.exports = {
             'X-ClientTraceId' : get_guid (),
         }
     };
-
-    var req = https.request (request_params, response_handler);
+    var req = https.request (request_params, function(response) {response_handler(response, doStuff, res)});
     req.write (content);
     req.end ();
 

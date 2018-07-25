@@ -19,13 +19,14 @@ var path = '/bing/v7.0/images/search';
 
 var imageJson;
 
-var response_handler = function (response) {
+var response_handler = function (response, jsonObj, renderHtml, res) {
     let body = '';
     response.on('data', function (d) {
         body += d;
     });
     response.on('end', function () {
         imageJson = JSON.parse(body).value[1].thumbnailUrl;
+        renderHtml(jsonObj,imageJson, res);
     });
     response.on('error', function (e) {
         console.log('Error: ' + e.message);
@@ -34,7 +35,7 @@ var response_handler = function (response) {
 
 
 module.exports = {
- getImage : function (search) {
+ getImage : function (search,jsonObj, renderHtml, res) {
   let request_params = {
         method : 'GET',
         hostname : host,
@@ -44,9 +45,10 @@ module.exports = {
         }
     };
 
-    var req = https.request (request_params, response_handler);
+    var req = https.request (request_params, function(response) {response_handler(response,jsonObj, renderHtml, res)});
     req.write (search);
     req.end ();
+
 
     return imageJson;
  }

@@ -1,48 +1,65 @@
 
 .title {
 	font-family: 'Helvetica Neue',sans-serif;
+	display: flex;
 	font-size: 18px;
 }
+
+.logo {
+	height: 50px;
+	width: 50px;
+}
+
+.title_text {
+	line-height: 50px;
+	color: white;
+}
+
 .flex {
 	display: flex;
 }
 
-img {
-	width: 130px;
-	height: 130px;
-	vertical-align: super;
+.render_image {
+	width: 40%;
+	height: 40%
+	max-width: 9em;
+	max-height: 9em;
+	margin: 2em;
 }
 
-body
-{background-color: #2E404E ;}
+body{
+	background-color: #2E404E;
+}
 
 .flashcard {
 	border: 1px solid lightgrey;
-	width: 30%;
+	width: 80%;
+	min-width: 280px;
     border-radius: 3%;
     height: 50%;
-    flex-direction: inherit;
+	padding: 10px;
+	background-color: white;
 	align-items: center;
-	align-content: center;
-	padding: 30px;
-	margin-left: auto;
-	margin-right: auto;
-	flex-direction: column;
-	background-color: white ;
+	flex-direction: row;
+    flex-wrap: wrap;
 }
 
-span{display: inline-block;
-	align-content: center}
-.firstrow {vertical-align: super;}
-.secondrow {vertical-align: sub;}
+.secondrow {
+	display: flex;
+	flex-direction:column;
+}
+
+.secondrow * {
+	margin-bottom: 8px;
+}
 
 h1 { color: white; font-family: 'Trocchi', sans-serif; font-size: 25px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
 }
 
-.translationtitle { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
+.translationtitle { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 24px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; 
 }
 
-.h2 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+h2 { color: white; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 300; line-height: 32px; margin: 10 10 72px; text-align: left; }
 	
-.p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: text-top; text-justify: inter-word; 
-}	
+.p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 12px; line-height: 24px; text-align: center;}
+

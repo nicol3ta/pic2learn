@@ -1,4 +1,4 @@
-module.exports.getLanguage = function(lang) {
+var getLanguage = function(lang) {
 	switch(lang) {
 		case "es":
 			return "Spanish";
@@ -10,4 +10,3 @@ module.exports.getLanguage = function(lang) {
 			return lang;
 	}
 }
-
