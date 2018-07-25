@@ -6,7 +6,6 @@
 	div.secondrow 
 		each val,index in locals.translations
 			.flex
-				
-				.flex.translationtitle !{locals.translations[index].text}
-				.flex.p (!{locals.translations[index].to})
+				.translationtitle !{locals.translations[index].text}
+				.p (!{locals.translations[index].to})
 script(type="text/javascript" src="scripts/shared.js")
