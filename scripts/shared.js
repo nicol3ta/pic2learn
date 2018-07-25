@@ -10,3 +10,4 @@ module.exports.getLanguage = function(lang) {
 			return lang;
 	}
 }
+
